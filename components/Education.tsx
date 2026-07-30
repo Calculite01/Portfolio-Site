@@ -5,7 +5,7 @@ import { education } from "@/lib/data";
 
 export default function Education() {
   return (
-    <section id="education" className="mx-auto max-w-5xl px-6 py-24">
+    <section id="education" className="mx-auto max-w-[1400px] px-6 py-24 sm:px-10 lg:px-20">
       <h2 className="font-display text-2xl font-semibold text-ink sm:text-3xl">
         Education
       </h2>

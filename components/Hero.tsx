@@ -51,9 +51,9 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative flex min-h-screen flex-col items-start justify-center overflow-hidden bg-grid-fade px-6"
+      className="relative flex min-h-screen flex-col items-start justify-center overflow-hidden bg-grid-fade px-6 sm:px-10 lg:px-20"
     >
-      <div className="mx-auto w-full max-w-3xl">
+      <div className="mx-auto w-full max-w-[1400px]">
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
@@ -88,7 +88,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
-          className="mt-6 max-w-xl text-ink-muted"
+          className="mt-6 max-w-2xl text-ink-muted"
         >
           I build full-stack products with AI baked into the workflow, not
           bolted on. Currently studying Computer Science with AI at Coventry

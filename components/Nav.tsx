@@ -11,7 +11,7 @@ const links = [
 export default function Nav() {
   return (
     <header className="fixed top-0 left-0 right-0 z-40 border-b border-white/5 bg-bg/80 backdrop-blur-md">
-      <nav className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
+      <nav className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-4 sm:px-10 lg:px-20">
         <a
           href="#top"
           className="font-mono text-sm text-ink-muted hover:text-accent transition-colors"

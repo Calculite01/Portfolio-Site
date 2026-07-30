@@ -6,7 +6,7 @@ import { links } from "@/lib/data";
 
 export default function Contact() {
   return (
-    <section id="contact" className="mx-auto max-w-5xl px-6 py-24">
+    <section id="contact" className="mx-auto max-w-[1400px] px-6 py-24 sm:px-10 lg:px-20">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
