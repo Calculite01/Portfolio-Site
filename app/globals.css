@@ -39,3 +39,9 @@ textarea:focus-visible {
 .text-glow {
   text-shadow: 0 0 24px rgba(34, 211, 238, 0.35);
 }
+
+
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.85; filter: brightness(1); }
+  50% { opacity: 1; filter: brightness(1.25); }
+}
