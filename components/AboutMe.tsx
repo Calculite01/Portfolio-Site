@@ -8,7 +8,6 @@ const quickFacts = [
   { label: "Based in", value: "Birmingham, United Kingdom" },
   { label: "Focus", value: "Full-stack + AI engineering" },
   { label: "Studying", value: "BSc Computer Science with AI" },
-  { label: "Looking for", value: "Internships" },
 ];
 
 export default function AboutMe() {
