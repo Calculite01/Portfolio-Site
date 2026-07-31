@@ -36,6 +36,7 @@ export type EducationItem = {
   program: string;
   dates: string;
   notes?: string;
+  highlights?: string[];
 };
 
 // --- Add new projects by appending an object to this array ---
@@ -113,30 +114,19 @@ export const projects: Project[] = [
 // --- Add new roles by appending an object to this array ---
 export const experience: Experience[] = [
   {
-    role: "AI Engineering Apprentice",
-    org: "The FAS Solutions",
-    dates: "April 2025 – September 2025",
+    role: "AI Engineer",
+    org: "Kings Accountants",
+    dates: "June 2026 - July 2026",
     bullets: [
-      "Developed ReceiptML, an expense intelligence app using PyTorch and OpenCV for real-time document localization and OCR preprocessing",
-      "Built a custom programmatic synthetic data generator to overcome annotated training data scarcity for the computer vision model",
+      "Built and deployed Statement2Sheet, a production Next.js 14 & Gemini AI web app automating PDF bank statement conversions, saving 50+ hours of manual bookkeeping monthly",
+      "Engineered a defensive parsing and multi-model AI fallback pipeline, reducing statement conversion failure rates from ~50% to near-zero",
     ],
-    projectSlugs: ["receiptml"],
-  },
-  {
-    role: "Team Lead & Core Systems Developer",
-    org: "Coventry University — 4005CMD Integrative Project (SCGSSM, 6-person team)",
-    dates: "2025",
-    bullets: [
-      "Led a 6-person engineering team to architect HomeGuard-MQTT, a real-time multi-threaded IoT security decision engine",
-      "Designed the MQTT topic hierarchy and system architecture, and wrote control.py, the central logic engine driving all actuator decisions",
-      "Delivered 57 GitHub commits (2,000+ lines) as the top contributor",
-    ],
-    projectSlugs: ["homeguard-mqtt"],
+    projectSlugs: ["pdf-to-csv-ai"],
   },
   {
     role: "Rotating Scrum Lead & Full-Stack Developer",
-    org: "Coventry University — 5005CMD Software Engineering (5-person team)",
-    dates: "2025 (8-week Agile delivery)",
+    org: "Coventry University",
+    dates: "January 2026 - April 2026 (8-week Agile delivery)",
     bullets: [
       "Co-engineered Komodo Hub, a full-stack Flask/PostgreSQL conservation platform, rotating weekly through Scrum Master, Product Owner, Frontend, Backend, and Support Developer roles",
       "Implemented authentication, organisation access-code login, and password recovery, and designed the database schema in SQLAlchemy",
@@ -145,14 +135,25 @@ export const experience: Experience[] = [
     projectSlugs: ["conservation-platform"],
   },
   {
-    role: "TODO: Role (e.g. Freelance Developer)",
-    org: "Kings Accountants",
-    dates: "TODO: Month YYYY – Month YYYY",
+    role: "AI Engineering Apprentice",
+    org: "The FAS Solutions",
+    dates: "April 2025 - September 2025",
     bullets: [
-      "Built and deployed Statement2Sheet, a production Next.js 14 & Gemini AI web app automating PDF bank statement conversions, saving 50+ hours of manual bookkeeping monthly",
-      "Engineered a defensive parsing and multi-model AI fallback pipeline, reducing statement conversion failure rates from ~50% to near-zero",
+      "Developed ReceiptML, an expense intelligence app using PyTorch and OpenCV for real-time document localization and OCR preprocessing",
+      "Built a custom programmatic synthetic data generator to overcome annotated training data scarcity for the computer vision model",
     ],
-    projectSlugs: ["pdf-to-csv-ai"],
+    projectSlugs: ["receiptml"],
+  },
+  {
+    role: "Team Lead & Core Systems Developer",
+    org: "Coventry University",
+    dates: "January 2025 - April 2025",
+    bullets: [
+      "Led a 6-person engineering team to architect HomeGuard-MQTT, a real-time multi-threaded IoT security decision engine",
+      "Designed the MQTT topic hierarchy and system architecture, and wrote control.py, the central logic engine driving all actuator decisions",
+      "Delivered 57 GitHub commits (2,000+ lines) as the top contributor",
+    ],
+    projectSlugs: ["homeguard-mqtt"],
   },
 ];
 
@@ -176,14 +177,26 @@ export const skills: SkillGroup[] = [
 export const education: EducationItem[] = [
   {
     school: "Coventry University",
-    program: "BSc Computer Science with Artificial Intelligence",
-    dates: "Sep 2024 – TODO grad date",
-    notes: "First Class, 90% average",
+    program: "Bachelor's Degree - Computer Science with Artificial Intelligence",
+    dates: "Sep 2024 – May 2028",
+    notes: "Grade: 90% / First Class (1:1) — maintaining a 90% overall average across Year 1 and Year 2.",
+    highlights: [
+      "Algorithm Competitions: won 5 of 10 cohort-wide optimization challenges against 50–100 students",
+      "Top module grades: Programming: Professional Practice (100%), Mathematical Skills (99%), Concepts & Algorithms (97%), Theory of Computation (96.5%), Computer Systems (91.15%), Software Engineering (91%), Advanced Algorithms (90.5%), Working with Data (90%)",
+      "Scrum Master & Lead Dev, Komodo Hub (91%): led an 8-week Agile delivery engineering a full-stack conservation platform using Flask, SQLAlchemy, Neon Postgres, and Vercel",
+      "Team Lead, HomeGuard IoT (77%): directed a 6-person engineering team to architect a distributed IoT security system using MQTT pub/sub and multi-threaded Python",
+    ],
+  },
+  {
+    school: "A-Levels",
+    program: "Mathematics, Physics, Chemistry",
+    dates: "Sep 2022 – July 2024",
+    notes: "Grades: Mathematics (A*), Physics (A*), Chemistry (A*)",
   },
 ];
 
 export const links = {
-  github: "https://github.com/TODO",
+  github: "https://github.com/Calculite01",
   linkedin: "https://linkedin.com/in/saad-wajid-a3b8b0354",
   email: "saadwajid401@gmail.com",
   resumeUrl: "/resume.pdf",
