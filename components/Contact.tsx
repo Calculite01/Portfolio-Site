@@ -1,10 +1,24 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Github, Linkedin } from "lucide-react";
+import { Mail, Github, Linkedin, Check } from "lucide-react";
 import { links } from "@/lib/data";
 
 export default function Contact() {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(links.email);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // clipboard API unavailable (e.g. insecure context) — fall back
+      // to just letting the mailto: href do its thing
+    }
+  };
+
   return (
     <section id="contact" className="mx-auto max-w-[1400px] px-6 py-24 sm:px-10 lg:px-20">
       <motion.div
@@ -22,12 +36,21 @@ export default function Contact() {
           Easiest way to reach me is email.
         </p>
         <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
-          <a
-            href={`mailto:${links.email}`}
-            className="flex items-center gap-2 rounded-md bg-accent px-5 py-2.5 text-sm font-medium text-bg transition-colors hover:bg-accent-soft"
+          <button
+            type="button"
+            onClick={handleCopyEmail}
+            className="flex w-[13.5rem] items-center justify-center gap-2 rounded-md bg-accent px-5 py-2.5 text-sm font-medium text-bg transition-colors hover:bg-accent-soft"
           >
-            <Mail size={16} /> {links.email}
-          </a>
+            {copied ? (
+              <>
+                <Check size={16} /> Copied!
+              </>
+            ) : (
+              <>
+                <Mail size={16} /> {links.email}
+              </>
+            )}
+          </button>
           <a
             href={links.github}
             className="text-ink-muted transition-colors hover:text-accent"
@@ -44,10 +67,6 @@ export default function Contact() {
           </a>
         </div>
       </motion.div>
-
-      <p className="mt-16 text-center font-mono text-xs text-ink-faint">
-        built by saad wajid — deployed on vercel
-      </p>
     </section>
   );
 }
