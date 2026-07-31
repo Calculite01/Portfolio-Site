@@ -191,7 +191,7 @@ export const education: EducationItem[] = [
     school: "A-Levels",
     program: "Mathematics, Physics, Chemistry",
     dates: "Sep 2022 – July 2024",
-    notes: "Grades: Mathematics (A*), Physics (A*), Chemistry (A*)",
+    highlights: ["Grades: Mathematics (A*), Physics (A*), Chemistry (A*)"],
   },
 ];
 

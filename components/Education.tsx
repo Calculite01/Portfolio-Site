@@ -20,20 +20,27 @@ export default function Education() {
             transition={{ duration: 0.5, delay: i * 0.05, ease: "easeOut" }}
             className="rounded-xl border border-white/5 bg-bg-surface p-6"
           >
-            <p className="font-mono text-xs text-ink-faint">{item.dates}</p>
-            <h3 className="mt-1 font-display text-lg font-semibold text-ink">
-              {item.school}
-            </h3>
+            <div className="flex flex-wrap items-start justify-between gap-x-4 gap-y-1">
+              <h3 className="font-display text-lg font-semibold text-ink">
+                {item.school}
+              </h3>
+              <p className="font-mono text-xs text-ink-faint">{item.dates}</p>
+            </div>
             <p className="text-sm text-ink-muted">{item.program}</p>
             {item.notes && (
               <p className="mt-2 text-sm text-ink-faint">{item.notes}</p>
             )}
             {item.highlights && item.highlights.length > 0 && (
-              <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm text-ink-muted">
-                {item.highlights.map((highlight, j) => (
-                  <li key={j}>{highlight}</li>
-                ))}
-              </ul>
+              <div className="mt-5 border-t border-white/5 pt-4">
+                <p className="font-mono text-xs uppercase tracking-wide text-accent">
+                  Highlights
+                </p>
+                <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm text-ink-muted">
+                  {item.highlights.map((highlight, j) => (
+                    <li key={j}>{highlight}</li>
+                  ))}
+                </ul>
+              </div>
             )}
           </motion.div>
         ))}
