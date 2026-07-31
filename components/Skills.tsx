@@ -23,13 +23,24 @@ export default function Skills() {
             <p className="font-mono text-xs uppercase tracking-wide text-accent">
               {group.category}
             </p>
-            <ul className="mt-3 space-y-2">
-              {group.items.map((item) => (
-                <li key={item} className="text-sm text-ink-muted">
+            <div className="mt-4 flex flex-wrap gap-2">
+              {group.items.map((item, j) => (
+                <motion.span
+                  key={item}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true, margin: "-80px" }}
+                  transition={{
+                    duration: 0.3,
+                    delay: i * 0.08 + j * 0.04,
+                    ease: "easeOut",
+                  }}
+                  className="rounded-full border border-white/10 px-3 py-1 text-xs text-ink-muted transition-colors hover:border-accent/40 hover:text-ink"
+                >
                   {item}
-                </li>
+                </motion.span>
               ))}
-            </ul>
+            </div>
           </motion.div>
         ))}
       </div>
