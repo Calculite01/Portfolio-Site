@@ -55,6 +55,7 @@ export const projects: Project[] = [
       "Early prototypes had a ~50% failure rate from rigid schema assumptions and inconsistent LLM JSON formatting. Fixed this by combining defensive parsing, dynamic column-key derivation, and an automated multi-model fallback chain that retries against alternate Gemini models if the primary one is at capacity or deprecated, bringing reliability to virtually 100% across tested layouts.",
     stack: ["Next.js 14", "TypeScript", "Tailwind CSS", "Google Gemini API", "xlsx", "papaparse", "Vercel"],
     demoUrl: "https://statement2sheet.vercel.app/",
+    repoUrl: "https://github.com/Calculite01/statement2sheet",
   },
   {
     slug: "receiptml",
@@ -70,6 +71,7 @@ export const projects: Project[] = [
     challenges:
       "Raw mobile uploads frequently suffered from shadows, rotation, and compression artifacts, which the preprocessing pipeline addresses through adaptive binarization and region localization to isolate high-density text clusters before OCR.",
     stack: ["Python", "Flask", "OpenCV", "PyTorch", "SQLite", "SQLAlchemy", "NumPy", "Pillow"],
+    repoUrl: "https://github.com/Calculite01/ReceiptML",
   },
   {
     slug: "homeguard-mqtt",
@@ -86,7 +88,8 @@ export const projects: Project[] = [
       "The system relied on a public MQTT broker, which introduced latency under load; a private/self-hosted broker was identified as the top recommendation for future iterations.",
     learnings:
       "A private broker would remove the public-broker latency bottleneck, and the topic-based architecture would make it straightforward to expand into a fuller smart-home platform (lighting, locks, HVAC).",
-    stack: ["Python", "MQTT", "paho-mqtt", "threading", "JSON"],
+    stack: ["Python", "MQTT", "paho-mqtt", "Multithreading", "JSON", "GitHub"],
+    repoUrl: "https://github.com/Calculite01/HomeGuard-MQTT",
   },
   {
     slug: "conservation-platform",
@@ -103,6 +106,7 @@ export const projects: Project[] = [
       "Requirements had to satisfy several distinct stakeholder groups (school teachers, students, community admins, conservation researchers, and platform management) at once rather than a single customer, which shaped the Risk Assessment Matrix and Product Backlog work done during Scrum Master and Product Owner rotations.",
     stack: ["Flask", "Python", "SQLAlchemy", "Neon (Postgres)", "Flask-WTF", "JavaScript", "HTML5", "CSS3", "Vercel"],
     demoUrl: "https://komodo-hub-eight.vercel.app/",
+    repoUrl: "https://github.com/Calculite01/KomodoHub",
   },
 ];
 
