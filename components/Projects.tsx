@@ -14,7 +14,7 @@ export default function Projects() {
         write-up.
       </p>
 
-      <div className="mt-12 grid gap-6 sm:grid-cols-2">
+      <div className="mt-12 grid auto-rows-fr gap-6 sm:grid-cols-2">
         {projects.map((project, i) => (
           <ProjectCard key={project.slug} project={project} index={i} />
         ))}

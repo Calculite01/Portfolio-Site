@@ -22,10 +22,11 @@ export default function ProjectCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.5, delay: index * 0.05, ease: "easeOut" }}
+      className="h-full"
     >
       <Link
         href={`/projects/${project.slug}`}
-        className={`group block rounded-xl border border-white/5 bg-bg-surface transition-colors hover:border-accent/30 ${
+        className={`group flex h-full flex-col rounded-xl border border-white/5 bg-bg-surface transition-colors hover:border-accent/30 ${
           compact ? "p-4" : "p-6 sm:p-8"
         }`}
       >
@@ -53,7 +54,7 @@ export default function ProjectCard({
           <p className="mt-3 text-sm text-ink-muted">{project.description}</p>
         )}
 
-        <div className={`flex flex-wrap gap-2 ${compact ? "mt-3" : "mt-5"}`}>
+        <div className={`flex flex-wrap gap-2 ${compact ? "mt-3" : "mt-5"} mt-auto pt-3`}>
           {project.stack.map((tech) => (
             <span
               key={tech}
