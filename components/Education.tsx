@@ -28,6 +28,13 @@ export default function Education() {
             {item.notes && (
               <p className="mt-2 text-sm text-ink-faint">{item.notes}</p>
             )}
+            {item.highlights && item.highlights.length > 0 && (
+              <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm text-ink-muted">
+                {item.highlights.map((highlight, j) => (
+                  <li key={j}>{highlight}</li>
+                ))}
+              </ul>
+            )}
           </motion.div>
         ))}
       </div>
