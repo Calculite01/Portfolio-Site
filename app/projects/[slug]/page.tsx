@@ -31,6 +31,8 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
           {project.demoUrl && (
             <a
               href={project.demoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-2 rounded-md bg-accent px-4 py-2 text-sm font-medium text-bg transition-colors hover:bg-accent-soft"
             >
               Live demo <ArrowUpRight size={14} />
@@ -38,7 +40,9 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
           )}
           {project.repoUrl && (
             <a
-              href={project.repoUrl}
+              href={project.repoUrl} 
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-2 rounded-md border border-white/10 px-4 py-2 text-sm text-ink-muted transition-colors hover:border-accent/50 hover:text-accent"
             >
               <Github size={16} /> View repo
