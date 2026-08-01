@@ -9,38 +9,35 @@ export default function Skills() {
       <h2 className="font-display text-2xl font-semibold text-ink sm:text-3xl">
         Skills &amp; stack
       </h2>
+      <p className="mt-3 max-w-xl text-ink-muted">
+        What I build with, day to day, across AI, backend, and the web.
+      </p>
 
-      <div className="mt-12 grid gap-6 sm:grid-cols-3">
+      <div className="mt-14 divide-y divide-white/5 border-t border-white/5">
         {skills.map((group, i) => (
           <motion.div
             key={group.category}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.5, delay: i * 0.08, ease: "easeOut" }}
-            className="rounded-xl border border-white/5 bg-bg-surface p-6"
+            className="grid gap-2 py-8 sm:grid-cols-[12rem_1fr] sm:gap-8"
           >
             <p className="font-mono text-xs uppercase tracking-wide text-accent">
               {group.category}
             </p>
-            <div className="mt-4 flex flex-wrap gap-2">
+            <p className="text-ink-muted">
               {group.items.map((item, j) => (
-                <motion.span
-                  key={item}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true, margin: "-80px" }}
-                  transition={{
-                    duration: 0.3,
-                    delay: i * 0.08 + j * 0.04,
-                    ease: "easeOut",
-                  }}
-                  className="rounded-full border border-white/10 px-3 py-1 text-xs text-ink-muted transition-colors hover:border-accent/40 hover:text-ink"
-                >
-                  {item}
-                </motion.span>
+                <span key={item}>
+                  <span className="text-ink transition-colors hover:text-accent">
+                    {item}
+                  </span>
+                  {j < group.items.length - 1 && (
+                    <span className="mx-2 text-ink-faint">·</span>
+                  )}
+                </span>
               ))}
-            </div>
+            </p>
           </motion.div>
         ))}
       </div>

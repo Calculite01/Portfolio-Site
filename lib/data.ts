@@ -161,11 +161,11 @@ export const experience: Experience[] = [
 export const skills: SkillGroup[] = [
   {
     category: "Languages",
-    items: ["Python", "TypeScript", "JavaScript", "C/C++", "SQL", "Bash"],
+    items: ["Python", "TypeScript", "JavaScript", "HTML", "CSS", "C/C++", "SQL", "Bash"],
   },
   {
     category: "AI / ML",
-    items: ["OpenCV", "PyTorch", "Gemini API", "Scikit-Learn", "NumPy", "Pandas", "Azure AI"],
+    items: ["OpenCV", "Gemini API", "Scikit-Learn", "NumPy", "Pandas", "Azure AI"],
   },
   {
     category: "Web & Cloud",
