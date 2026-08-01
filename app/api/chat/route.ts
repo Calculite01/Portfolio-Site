@@ -72,5 +72,5 @@ export async function POST(req: NextRequest) {
   const data = await response.json();
   const reply = data?.candidates?.[0]?.content?.parts?.[0]?.text;
 
-  return NextResponse.json({ reply: reply ?? "Sorry, I couldn't generate a reply." });
+  return NextResponse.json({ reply: reply ?? "Sorry, I couldn't generate a reply. This could be because of rate limits. Please try again later" });
 }
