@@ -21,7 +21,7 @@ const monoFont = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Saad Wajid — Full-Stack & AI Engineer",
+  title: "Saad Wajid Portfolio",
   description:
     "Full-stack engineer building AI-powered tools that turn messy data into usable systems.",
 };
