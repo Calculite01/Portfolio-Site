@@ -6,6 +6,12 @@ import { MessageCircle, X, Send } from "lucide-react";
 
 type Message = { role: "user" | "assistant"; content: string };
 
+const SUGGESTED_PROMPTS = [
+  "Tell me about Saad's Statement2Sheet project.",
+  "Tell me about his AI/ML experience",
+  "What's his tech stack?",
+];
+
 export default function ChatWidget() {
   const [open, setOpen] = useState(false);
   const [showLabel, setShowLabel] = useState(true);
@@ -20,6 +26,9 @@ export default function ChatWidget() {
   const [loading, setLoading] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
 
+  // Only show suggestions before the conversation has actually started
+  const showSuggestions = messages.length === 1 && !loading;
+
   // Fade the "ask me anything" label after a few seconds
   useEffect(() => {
     const timeout = setTimeout(() => setShowLabel(false), 4000);
@@ -30,8 +39,8 @@ export default function ChatWidget() {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight });
   }, [messages, open]);
 
-  async function sendMessage() {
-    const text = input.trim();
+  async function sendMessage(overrideText?: string) {
+    const text = (overrideText ?? input).trim();
     if (!text || loading) return;
 
     const nextMessages: Message[] = [...messages, { role: "user", content: text }];
@@ -105,6 +114,20 @@ export default function ChatWidget() {
                   thinking…
                 </div>
               )}
+
+              {showSuggestions && (
+                <div className="flex flex-col items-start gap-1.5 pt-1">
+                  {SUGGESTED_PROMPTS.map((prompt) => (
+                    <button
+                      key={prompt}
+                      onClick={() => sendMessage(prompt)}
+                      className="rounded-full border border-white/10 bg-bg-surface px-3 py-1.5 text-left text-xs text-ink-muted transition-colors hover:border-accent/40 hover:text-ink"
+                    >
+                      {prompt}
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
 
             <div className="flex items-center gap-2 border-t border-white/5 p-3">
@@ -116,7 +139,7 @@ export default function ChatWidget() {
                 className="flex-1 rounded-md bg-bg-surface px-3 py-2 text-sm text-ink outline-none placeholder:text-ink-faint"
               />
               <button
-                onClick={sendMessage}
+                onClick={() => sendMessage()}
                 aria-label="Send"
                 className="rounded-md bg-accent p-2 text-bg transition-colors hover:bg-accent-soft"
               >
