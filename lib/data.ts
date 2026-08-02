@@ -114,7 +114,7 @@ export const projects: Project[] = [
 // --- Add new roles by appending an object to this array ---
 export const experience: Experience[] = [
   {
-    role: "AI Engineer",
+    role: "AI Engineer Intern",
     org: "Kings Accountants",
     dates: "June 2026 - July 2026",
     bullets: [
