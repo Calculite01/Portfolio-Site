@@ -10,7 +10,7 @@
 [![Pinecone](https://img.shields.io/badge/Pinecone-000000?style=for-the-badge)](https://www.pinecone.io/)
 [![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com/)
 
-**Live:** https://portfolio-site-eta-pearl-28.vercel.app/
+**Live:** https://portfolio-site-saadwajid.vercel.app/
 
 ---
 
